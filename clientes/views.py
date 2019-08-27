@@ -24,3 +24,13 @@ def clientes_atualizar(request, id):
     return redirect('clientes_lista')
   
   return render(request, 'clientes_form.html', {'form': form})
+
+def clientes_excluir(request, id):
+  cliente = get_object_or_404(Cliente, pk=id)
+  form = ClienteForm(request.POST or None, instance=cliente)
+
+  if request.method == 'POST':
+    cliente.delete()
+    return redirect('clientes_lista')
+  
+  return render(request, 'clientes_excluir.html', {'cliente': cliente})
