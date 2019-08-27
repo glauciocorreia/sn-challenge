@@ -5,7 +5,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <form action="{% url 'clientes_novo' %}" method="post">
+      <form method="post">
         {% csrf_token %}
         {{ form }}
         <button type="submit">Cadastrar</button>

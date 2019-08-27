@@ -5,7 +5,10 @@
 <ul>
   {% for cliente in clientes %}
 
-    <li>{{ cliente.nome }}</li>
+
+    <li>
+      <a href="{% url 'clientes_atualizar' cliente.id %}">{{ cliente.nome }}</a>
+    </li>
 
   
   {% endfor %}
