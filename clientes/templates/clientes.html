@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1>Oi</h1>
+<ul>
+  {% for cliente in clientes %}
 
-<h1 class="bg-primary">AGORA FOI</h1>
+    <li>{{ cliente.nome }}</li>
+
+  
+  {% endfor %}
+</ul>
+
+<a href="{% url 'clientes_novo' %}">Adicionar</a>
 
 {% endblock %}
