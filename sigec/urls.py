@@ -19,5 +19,5 @@ from clientes import urls as clientes_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('clientes/', include(clientes_urls)),
+    path('', include(clientes_urls)),
 ]
