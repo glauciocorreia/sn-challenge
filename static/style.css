@@ -1,0 +1,9 @@
+body {
+  background-color: #FAF3DD;
+}
+
+.si-navbar a {
+  color: #5E6472;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
