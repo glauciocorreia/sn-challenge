@@ -2,8 +2,20 @@ body {
   background-color: #FAF3DD;
 }
 
+
+/* Menu */
+.si-navbar {
+  background-color: #FFA69E;
+}
 .si-navbar a {
   color: #5E6472;
   font-weight: 400;
   letter-spacing: 4px;
+  border: 1px solid #5E6472;
+}
+
+/* Tela Clientes */
+
+.si-clientes__title {
+  color: #5E6472;
 }
