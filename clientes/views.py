@@ -13,6 +13,9 @@ def clientes_novo(request):
     form.save()
     return redirect('clientes_lista')
 
+  
+  setattr(request, 'title', 'novo')
+
   return render(request, 'clientes_form.html', {'form': form})
 
 def clientes_atualizar(request, id):
@@ -22,6 +25,8 @@ def clientes_atualizar(request, id):
   if form.is_valid():
     form.save()
     return redirect('clientes_lista')
+
+  setattr(request, 'title', 'atualizar')
   
   return render(request, 'clientes_form.html', {'form': form})
 
