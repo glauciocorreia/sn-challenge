@@ -1,6 +1,45 @@
-<h2>login</h2>
-<form action="" method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Login</button>
-</form>
+{% extends 'base.html' %}
+
+{% load static from staticfiles %}
+
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'auth.css' %}">
+
+{% endblock %}
+
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <div class="user_card">
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <h2 class="si-login__title">SIGEC</h2>
+        <p class="si-login__subtitle">Sistema de Gerenciamento de Clientes</p>
+      </div>
+      <div class="d-flex justify-content-center form_container">
+
+        <form action="" method="post">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <div class="d-flex justify-content-center mt-4 login_container">
+            <button type="submit" name="button" class="btn btn-success btn-block">Login</button>
+          </div>
+          <div class="d-flex justify-content-center mt-3 login_container">
+            <button type="submit" name="button" class="btn btn-block btn-primary">Login com Facebook</button>
+          </div>
+        </form>
+      </div>
+      <div class="mt-4">
+        <div class="si-login__text d-flex justify-content-center">
+          <span class="si-login__text1">Não tem acesso?</span> <a href="#" class="ml-2" role="button" class="btn btn-link">Cadastre-se</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

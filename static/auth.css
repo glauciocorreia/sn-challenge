@@ -1,0 +1,42 @@
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.user_card {
+  height: 500px;
+  width: 350px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #FFA69E;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+}
+
+.si-login__title {
+  color: #5E6472;
+  font-weight: 400;
+  letter-spacing: 4px;
+  border: 1px solid #5E6472;
+}
+
+.si-login__subtitle {
+  color: #5E6472;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.si-login__text {
+  color: #5E6472;
+  font-size: 0.9rem;
+}
