@@ -26,10 +26,10 @@
           {% csrf_token %}
           {{ form|crispy }}
           <div class="d-flex justify-content-center mt-4 login_container">
-            <button type="submit" name="button" class="btn btn-success btn-block">Login</button>
+            <button type="submit" name="button" class="btn btn-success btn-block">Entrar</button>
           </div>
           <div class="d-flex justify-content-center mt-3 login_container">
-            <button type="submit" name="button" class="btn btn-block btn-primary">Login com Facebook</button>
+            <a type="button" role="button" name="button" class="btn btn-block btn-primary" href="{% url 'social:begin' 'facebook' %}" >Entrar com Facebook</a>
           </div>
         </form>
       </div>

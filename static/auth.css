@@ -4,6 +4,7 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: #FAF3DD;
 }
 
 .user_card {
@@ -28,6 +29,7 @@ html {
   font-weight: 400;
   letter-spacing: 4px;
   border: 1px solid #5E6472;
+  padding: 5px;
 }
 
 .si-login__subtitle {

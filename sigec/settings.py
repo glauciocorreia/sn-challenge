@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'social_django',
     'clientes',
 ]
 
@@ -51,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'sigec.urls'
@@ -66,10 +69,18 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 WSGI_APPLICATION = 'sigec.wsgi.application'
 
@@ -127,6 +138,15 @@ STATICFILES_DIRS = [
     'static',
 ]
 
-LOGIN_URL = '/login/'
+LOGIN_URL = 'login'
+
+LOGOUT_URL = 'logout'
 
 LOGIN_REDIRECT_URL = 'clientes_lista'
+
+LOGOUT_REDIRECT_URL = 'login'
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '470908030418575'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'ae98ef16cd163e67f09f8c6527d09432'  # App Secret
