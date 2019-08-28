@@ -25,8 +25,15 @@
             <th>{{ forloop.counter }}</th>
             <td>{{ cliente.nome }}</td>
             <td>
-              <a href="{% url 'clientes_atualizar' cliente.id %}" class="text-success" data-toggle="tooltip" data-placement="top"
-                title="Editar">
+              <a href="{% url 'clientes_localizacao' cliente.id %}" class="text-warning" data-toggle="tooltip" data-placement="top" title="Localização">
+                <i class="material-icons">
+                  map
+                </i>
+              </a>
+            </td>
+            <td>
+              <a href="{% url 'clientes_atualizar' cliente.id %}" class="text-success" data-toggle="tooltip"
+                data-placement="top" title="Editar">
                 <i class="material-icons">
                   edit
                 </i>
@@ -37,13 +44,6 @@
                 data-placement="top" title="Excluir">
                 <i class="material-icons">
                   delete
-                </i>
-              </a>
-            </td>
-            <td>
-              <a href="#" class="text-warning" data-toggle="tooltip" data-placement="top" title="Localização">
-                <i class="material-icons">
-                  map
                 </i>
               </a>
             </td>

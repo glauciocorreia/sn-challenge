@@ -14,8 +14,20 @@ body {
   border: 1px solid #5E6472;
 }
 
+.si-navbar__brand:hover {
+  background: #5E6472;
+  color: white !important;
+}
+
 /* Tela Clientes */
 
 .si-clientes__title {
   color: #5E6472;
+}
+
+/* Tela Localização */
+
+.si-localizacao__map {
+  height: 50vh;
+  width: 100vw;
 }

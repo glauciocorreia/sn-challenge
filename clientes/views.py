@@ -44,3 +44,9 @@ def clientes_excluir(request, id):
     return redirect('clientes_lista')
   
   return render(request, 'clientes_excluir.html', {'cliente': cliente})
+
+@login_required
+def clientes_localizacao(request, id):
+  cliente = get_object_or_404(Cliente, pk=id)
+
+  return render(request, 'clientes_localizacao.html', {'cliente': cliente})

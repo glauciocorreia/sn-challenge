@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'menu.html' %}
+
+<div class="container mb-5">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-md-8">
+      <div>
+        <div class="d-flex justify-content-between align-items-center">
+          <h1 class="si-clientes__title mt-2">Localização</h1>
+          <div>
+            <a class="btn btn-info" href="{% url 'clientes_lista' %}" role=" button">Retornar</a>
+          </div>
+        </div>
+        <hr class="mt-0 mb-4">
+      </div>
+      <div class="mb-3">
+        <span class="font-weight-bold">Cliente: </span><span>{{ cliente.nome }}</span>
+        <br />
+        <span class="font-weight-bold">Endereço: </span><span>{{ cliente.endereco }}, {{ cliente.numero }}, {{ cliente.cidade }}-{{ cliente.estado }}, {{ cliente.pais }},
+          {{ cliente.cep }}</span>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div id="map" class="si-localizacao__map"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let map, geocoder, address;
+
+  address = "{{ cliente.endereco }}, {{ cliente.numero }}, {{ cliente.cidade }}, {{ cliente.estado }}, {{ cliente.pais }}, {{ cliente.cep }}";
+  console.log(address)
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: -13.7059134, lng: -69.6456887 },
+      zoom: 2,
+      disableDefaultUI: true,
+    });
+    geocoder = new google.maps.Geocoder();
+    codeAddress(geocoder, map);
+  }
+  function codeAddress(geocoder, map) {
+    geocoder.geocode({ 'address': address }, function (results, status) {
+      if (status === 'OK') {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location,
+        });
+        map.setZoom(10);
+      } else {
+        alert('Ocorreu um erro no processo de geolocalização: ');
+      }
+    });
+  }
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVoaKMHi56q7ep1aEx6qBAIk7txu3a660&callback=initMap" async
+  defer></script>
+
+{% endblock %}
