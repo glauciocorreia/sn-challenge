@@ -4,10 +4,25 @@
 
 {% include 'menu.html' %}
 
-<h1>Tem certeza que deseja deletar {{ cliente.nome }}?</h1>
-<form method="POST" enctype="multipart/form-data">
-  {% csrf_token %}
-  <button type="submit">Delete</button>
-</form>
+<div class="container mb-5">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-md-8">
+      <div>
+        <h1 class="si-clientes__title mt-2">
+          Excluir Cliente
+        </h1>
+        <hr class="mt-0 mb-4">
+      </div>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>Tem certeza que deseja excluir o/a cliente <span class="font-weight-bold">{{ cliente.nome }}</span>?</p>
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-danger" type="submit">Excluir</button>
+          </div> 
+      </form>
+
+    </div>
+  </div>
+</div>
 
 {% endblock %}

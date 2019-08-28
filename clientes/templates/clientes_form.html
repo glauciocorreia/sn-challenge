@@ -20,21 +20,19 @@
         </h1>
         <hr class="mt-0 mb-4">
       </div>
-      <div class="col-sm-12">
-        <form method="post" novalidate>
-          {% csrf_token %}
-          {{ form|crispy }}
-          <div class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-info">
-              {% if request.title == 'novo'%}
-              Cadastrar
-              {% elif request.title == 'atualizar' %}
-              Atualizar
-              {% endif %}
-            </button>
-          </div>
-        </form>
-      </div>
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-info">
+            {% if request.title == 'novo'%}
+            Cadastrar
+            {% elif request.title == 'atualizar' %}
+            Atualizar
+            {% endif %}
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
