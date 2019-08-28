@@ -2,14 +2,14 @@ from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
 class Cliente(models.Model):
-  nome = models.CharField(max_length=150, null=False, blank=False)
+  nome = models.CharField(max_length=80)
   telefone = PhoneNumberField(null=False, blank=False, unique=True)
-  endereco = models.CharField(max_length=200, null=False, blank=False)
-  numero = models.CharField(max_length=15, null=True, blank=True)
-  cidade = models.CharField(max_length=80, null=False, blank=False)
-  estado = models.CharField(max_length=80, null=False, blank=False)
-  pais = models.CharField(max_length=80, null=False, blank=False)
-  cep = models.IntegerField(null=False, blank=False)
+  endereco = models.CharField(max_length=100)
+  numero = models.CharField(max_length=6)
+  cidade = models.CharField(max_length=50)
+  estado = models.CharField(max_length=100)
+  pais = models.CharField(max_length=50)
+  cep = models.CharField(max_length=9)
   
 
   def __str__(self):

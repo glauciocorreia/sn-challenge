@@ -12,9 +12,9 @@
       <div>
         <h1 class="si-clientes__title mt-2">
           {% if request.title == 'novo'%}
-            Adicionar
+          Adicionar
           {% elif request.title == 'atualizar' %}
-            Atualizar 
+          Atualizar
           {% endif %}
           Cliente
         </h1>
@@ -24,7 +24,15 @@
         <form method="post" novalidate>
           {% csrf_token %}
           {{ form|crispy }}
-          <button type="submit" class="btn btn-info">Cadastrar</button>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-info">
+              {% if request.title == 'novo'%}
+              Cadastrar
+              {% elif request.title == 'atualizar' %}
+              Atualizar
+              {% endif %}
+            </button>
+          </div>
         </form>
       </div>
     </div>
