@@ -1,8 +1,8 @@
 <nav class="si-navbar navbar navbar-light mb-3">
   <div class="mr-auto">
-    <a class="navbar-brand pr-3 pl-3" href="{% url 'clientes_lista' %}">SIGEC</a>
+    <a class="si-navbar__brand navbar-brand pr-3 pl-3" href="{% url 'clientes_lista' %}">SIGEC</a>
   </div>
   <div>
-    <button class="btn btn-info my-2 my-sm-0" type="submit">Logout</button>
+    <a class="btn btn-info my-2 my-sm-0" href="{% url 'logout' %}" role=" button">Logout</a>
   </div>
 </nav>
