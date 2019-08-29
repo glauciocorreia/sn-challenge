@@ -1,7 +1,5 @@
 from django.urls import path
-from django.conf.urls import (
-handler404, handler500
-)
+
 from .views import clientes_lista
 from .views import clientes_novo
 from .views import clientes_atualizar
@@ -15,6 +13,3 @@ urlpatterns = [
     path('excluir/<int:id>', clientes_excluir, name="clientes_excluir"),
     path('localizacao/<int:id>', clientes_localizacao, name="clientes_localizacao"),
 ]
-
-handler404 = 'clientes.views.handler404'
-handler500 = 'clientes.views.handler500'

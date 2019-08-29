@@ -19,6 +19,9 @@ from clientes import urls as clientes_urls
 from contas import urls as contas_urls
 from django.contrib.auth import views as auth_views
 from django.views.generic.base import TemplateView
+from django.conf.urls import (
+handler404, handler500
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,3 +33,6 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='login.html'), name='home'),
     path('', include('social_django.urls', namespace='social')),
 ]
+
+handler404 = 'clientes.views.handler404'
+handler500 = 'clientes.views.handler500'
