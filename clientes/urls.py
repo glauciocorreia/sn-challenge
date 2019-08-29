@@ -10,5 +10,8 @@ urlpatterns = [
     path('novo/', clientes_novo, name="clientes_novo"),
     path('atualizar/<int:id>', clientes_atualizar, name="clientes_atualizar"),
     path('excluir/<int:id>', clientes_excluir, name="clientes_excluir"),
-    path('localizacao/<int:id>', clientes_localizacao, name="clientes_localizacao")
+    path('localizacao/<int:id>', clientes_localizacao, name="clientes_localizacao"),
 ]
+
+handler404 = 'clientes.views.handler404'
+handler500 = 'clientes.views.handler500'

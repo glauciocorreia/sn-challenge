@@ -50,3 +50,14 @@ def clientes_localizacao(request, id):
   cliente = get_object_or_404(Cliente, pk=id)
 
   return render(request, 'clientes_localizacao.html', {'cliente': cliente})
+
+
+def handler404(request, template_name="login.html"):
+    response = render_to_response("login")
+    response.status_code = 404
+    return response
+
+def handler500(request, template_name="login.html"):
+    response = render_to_response("login")
+    response.status_code = 500
+    return response

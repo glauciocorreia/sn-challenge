@@ -29,7 +29,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 # DEBUG = True
 
-ALLOWED_HOSTS = ['sn-sigec.herokuapp.com']
+ALLOWED_HOSTS = ['sn-sigec.herokuapp.com', 'localhost']
 
 
 # Application definition
