@@ -24,7 +24,13 @@ html {
   border-radius: 5px;
 }
 
-.si-login__title {
+.user_card__cadastro {
+  height: unset;
+  width: unset;
+  padding: 30px;
+}
+
+.si-login__title, .si-cadastro__title {
   color: #5E6472;
   font-weight: 400;
   letter-spacing: 4px;
@@ -32,13 +38,13 @@ html {
   padding: 5px;
 }
 
-.si-login__subtitle {
+.si-login__subtitle, .si-cadastro__subtitle {
   color: #5E6472;
   font-weight: 400;
   font-size: 0.8rem;
 }
 
-.si-login__text {
+.si-login__text, .si-cadastro__text {
   color: #5E6472;
   font-size: 0.9rem;
 }

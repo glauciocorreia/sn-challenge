@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static from staticfiles %}
+
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'auth.css' %}">
+
+{% endblock %}
+
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <div class="user_card user_card__cadastro">
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <h2 class="si-cadastro__title">SIGEC</h2>
+        <p class="si-cadastro__subtitle">Sistema de Gerenciamento de Clientes</p>
+      </div>
+      <div class="d-flex justify-content-center form_container">
+
+        <form  method="post">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <div class="d-flex justify-content-center mt-4 cadastro_container">
+            <button type="submit" name="button" class="btn btn-info btn-block">Cadastrar</button>
+          </div>
+        </form>
+      </div>
+      <div class="mt-4">
+        <div class="si-cadastro__text d-flex justify-content-center">
+          <span class="si-cadastro__text1">Já possui cadastro?</span> <a href="{% url 'login' %}" class="ml-2" role="button"
+            class="btn btn-link">Acesse</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
